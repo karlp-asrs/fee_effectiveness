@@ -9,7 +9,7 @@ output:
 
 ## What is Fee Effectiveness?
 
-In negotiating private equity or joint venture structures, we are faced with the dilemma of how negotiate.  We do not want to undercompensate our partners reducing motivation to work or  incenting to seek alternate capital sources.  Nor do we want to overcompensate them shortchanging ourselves on rewards for the risks we have taken by providing capital to an enterprise.
+In negotiating private equity or joint venture structures, we are faced with the dilemma of how to negotiate fees.  We do not want to undercompensate our partners reducing motivation to work or incenting them to seek alternate capital sources.  Nor do we want to overcompensate them shortchanging ourselves on rewards for the risks we have taken by providing capital to an enterprise.
 
 Another dilemma in assessing fees is that fee drag expressed in terms of percent of capital invested does not consider performance.  Other things equal, a manager who generates 8% excess return and charges 2% fees is better than a manager who generates 2% excess performance and charges 1% in fees.  In the former case, you make 6% net excess return and the manager has captured 25% of the gross excess return as its fee.  In the latter case, you make 1% excess return and the manager has captured 50% of the gross excess return in fees.
 
