@@ -62,3 +62,48 @@ ggplot(df,aes(x=year,y=slice_to_gp)) + geom_line()
 ```
 
 ![](fee_effectivenss_files/figure-markdown_github/unnamed-chunk-2-2.png)
+
+Relationship of fee effectiveness ratio and slice of pie approach
+-----------------------------------------------------------------
+
+This illustrates the curvature of the fee effectiveness and its sensitivity to "slice of pie" percent calculation. In relevant ranges, the fee effectiveness ratio is quite sensitive to small changes in the percent amount of profit sharing. For this reason, we think the slice of the pie percent is a better and more intuitive approach to communicating fee effectiveness and understanding fairness of fees. However, a prominent consultant advocates and some people prefer the ratio approach. If you use ratios, you just need to understand this sensitivity.
+
+``` r
+slice_to_gp=seq(.2,.8,.01)
+fee_effectiveness_ratio=(1-slice_to_gp)/slice_to_gp
+df2=data.frame(slice_to_gp,fee_effectiveness_ratio)
+ggplot(df2,aes(x=slice_to_gp,y=fee_effectiveness_ratio)) + geom_line()
+```
+
+![](fee_effectivenss_files/figure-markdown_github/unnamed-chunk-3-1.png)
+
+Now we'll plot the first derivative (the delta) of this function.
+
+``` r
+library(Deriv)
+```
+
+    ## Warning: package 'Deriv' was built under R version 3.4.4
+
+``` r
+f=function(x) (1-x)/x
+f2=Deriv(f)
+delta_fee_eff=f2(slice_to_gp)
+df2=cbind(df2,delta_fee_eff)
+ggplot(df2,aes(x=slice_to_gp,y=delta_fee_eff)) + geom_line() + 
+  ggtitle("Delta of Fee Effectiveness Ratio")
+```
+
+![](fee_effectivenss_files/figure-markdown_github/unnamed-chunk-4-1.png)
+
+Now let's plot the second derivative (the gamma) of the function.
+
+``` r
+f3=Deriv(f2)
+gamma_fee_eff=f3(slice_to_gp)
+df2=cbind(df2,gamma_fee_eff)
+ggplot(df2,aes(x=slice_to_gp,y=gamma_fee_eff)) + geom_line() + 
+  ggtitle("Gamma of Fee Effectiveness Ratio")
+```
+
+![](fee_effectivenss_files/figure-markdown_github/unnamed-chunk-5-1.png)
