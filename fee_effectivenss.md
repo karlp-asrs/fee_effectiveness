@@ -1,4 +1,3 @@
-
 Fee Effectiveness
 ================
 
@@ -108,5 +107,3 @@ ggplot(df2,aes(x=slice_to_gp,y=gamma_fee_eff)) + geom_line() +
 ```
 
 ![](fee_effectivenss_files/figure-markdown_github/unnamed-chunk-5-1.png)
-
-
